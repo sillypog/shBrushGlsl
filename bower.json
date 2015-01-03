@@ -1,0 +1,25 @@
+{
+  "name": "shBrushGlsl",
+  "version": "0.0.0",
+  "authors": [
+    "Peter Hastie <pete@sillypog.com>"
+  ],
+  "description": "GLSL brush for Syntax Highlighter",
+  "main": "lib/shBrushGlsl.js",
+  "keywords": [
+    "GLSL",
+    "Syntax",
+    "Highlighter"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "SyntaxHighlighter": "~3.0.83"
+  }
+}

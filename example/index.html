@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<head>
+    <link href='../bower_components/SyntaxHighlighter/styles/shCore.css' rel='stylesheet' type='text/css'/>
+    <link href='../bower_components/SyntaxHighlighter/styles/shThemeDefault.css' rel='stylesheet' type='text/css'/>
+    <script src='../bower_components/SyntaxHighlighter/scripts/XRegExp.js' type='text/javascript'/></script>
+    <script src='../bower_components/SyntaxHighlighter/scripts/shCore.js' type='text/javascript'/></script>
+    <script src='../bower_components/SyntaxHighlighter/scripts/shBrushCpp.js' type='text/javascript'/></script>
+
+    <script src='../lib/brush-glsl.js' type='text/javascript'/></script>
+
+    <script language='javascript' type='text/javascript'>
+        SyntaxHighlighter.all();
+    </script>
+</head>
+<body>
+    <pre class="brush: cpp">// Load texture image
+    int width, height;
+    bool hasAlpha;
+    char filename[] = "textures/grass-8.png";
+    bool success = loadPngImage(filename, width, height, hasAlpha, &amp;textureImage);
+    printf("Outcome of loading %s: %s \n ", filename, success ? "success" : "fail");
+    if (success){
+     cout &lt;&lt; filename &lt;&lt; ": " &lt;&lt; width &lt;&lt; "x" &lt;&lt; height &lt;&lt; ", hasAlpha: " &lt;&lt; hasAlpha &lt;&lt; endl;
+    }
+    </pre>
+    </br/>
+    <pre class="brush: glsl">void main(){
+    vec2 outTex = Texcoord;
+
+    if (outTex.y &lt; 0.5){
+      outTex.y *= -1;
+      outTex.x += sin((Texcoord.y * 60.0) + elapsed) * 1.5 / (sin(elapsed)+3) / 30 ;
+    }
+
+    outColor = texture(texKitten, outTex);
+    }
+    </pre>
+</body>
